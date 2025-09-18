@@ -98,7 +98,9 @@
           "text": "Professional solar panel cleaning service. They were thorough and our panels are producing more energy than ever. Highly recommend!",
           "avatar": ""
         }
-      ]
+      ],
+      "useEmbed": true,
+      "embedCode": "<script src=\"https://elfsightcdn.com/platform.js\" async></script>\n<div class=\"elfsight-app-893eac12-ce22-4682-9d4b-759a3336e8d5\" data-elfsight-app-lazy></div>"
     },
     "gallery": {
       "enabled": true,
@@ -182,7 +184,6 @@
           ],
           "popular": false,
           "exclusions": [
-            "RainBlock Tech",
             "7 Day Rain Guarantee",
             "FREE Hard Water Removal"
           ]
@@ -194,7 +195,6 @@
           "description": "",
           "features": [
             "Satisfaction Guarantee",
-            "RainBlock Tech",
             "7 Day Rain Guarantee",
             "FREE Hard Water Removal"
           ],
@@ -207,7 +207,6 @@
           "description": "",
           "features": [
             "Satisfaction Guarantee",
-            "RainBlock Tech",
             "7 Day Rain Guarantee",
             "FREE Hard Water Removal"
           ],

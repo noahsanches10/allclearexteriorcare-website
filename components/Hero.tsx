@@ -18,6 +18,11 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
   const getPageOverlaySettings = () => {
     const pageBackground = getPageHeroBackground();
     if (!pageBackground) return {};
+    // First try overlay settings keyed by the full path (for external videos and URLs)
+    const overlayByPath = siteConfig?.heroOverlayByPath?.[pageBackground];
+    if (overlayByPath) return overlayByPath;
+
+    // Fallback: derive filename and look up filename-keyed overlay entries
     const pathParts = pageBackground.split('/');
     const filename = pathParts[pathParts.length - 1]?.split('?')[0];
     if (!filename) return {};
@@ -169,6 +174,28 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
 
   return (
     <section className={getHeroClasses()} style={getHeroStyle()}>
+      {/* Background video (external URL) */}
+      {(() => {
+        const pageBackground = getPageHeroBackground();
+        if (pageBackground && /^https?:\/\//.test(pageBackground) && !pageBackground.includes('/uploads/')) {
+          // Render a video element as the background
+          return (
+            <video
+              src={pageBackground}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ 
+                objectPosition: `center ${getPageOverlaySettings().videoPosition ?? 50}%`
+              }}
+              muted
+              autoPlay
+              loop
+              playsInline
+            />
+          );
+        }
+        return null;
+      })()}
+
       {/* Overlay */}
       {getOverlayClasses() && (
         <div className={getOverlayClasses()} style={getOverlayStyle()}></div>

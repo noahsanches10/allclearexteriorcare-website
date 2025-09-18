@@ -60,11 +60,11 @@
   "footerTextColor": "auto",
   "fontFamily": "poppins",
   "heroBackgrounds": {
-    "home": "/uploads/hero-background-1755721892721.jpeg",
     "service-window-cleaning": "/uploads/hero-background-1756167043123.webp",
     "service-gutter-cleaning": "/uploads/hero-background-1756167062732.jpg",
     "service-solar-panel-cleaning": "/uploads/hero-background-1756167092113.webp",
-    "service-house-washing": "/uploads/hero-background-1756167198579.jpg"
+    "service-house-washing": "/uploads/hero-background-1756167198579.jpg",
+    "home": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/hero.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL2hlcm8ubW92IiwiaWF0IjoxNzU4MjI5MzM4LCJleHAiOjE3ODk3NjUzMzh9.M6cx-8yLngxfqn4QgogbVSfdUIcAENIWFqNWOmwkxkw"
   },
   "heroStyling": {
     "backgroundType": "gradient",
@@ -115,7 +115,69 @@
       "overlayType": "dark",
       "overlayOpacity": 50,
       "overlayColor": "#000000"
+    },
+    "image-video-1758229349902": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "image-video-1758229590076": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "image-video-1758229756670": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "image-video-1758230220060": {
+      "overlayType": "none",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "image-video-1758230511778": {
+      "overlayType": "none",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "image-video-1758230914847": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "image-video-1758231374867": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 23
     }
   },
-  "headerCtaTextColor": "primary"
+  "headerCtaTextColor": "primary",
+  "heroOverlayByPath": {
+    "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/hero.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL2hlcm8ubW92IiwiaWF0IjoxNzU4MjI5MzM4LCJleHAiOjE3ODk3NjUzMzh9.M6cx-8yLngxfqn4QgogbVSfdUIcAENIWFqNWOmwkxkw": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 23
+    },
+    "/uploads/hero-background-1756167043123.webp": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "/uploads/hero-background-1756167062732.jpg": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    },
+    "/uploads/hero-background-1756167092113.webp": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000"
+    }
+  },
+  "heroVideos": {
+    "video-1758231374867": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/hero.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL2hlcm8ubW92IiwiaWF0IjoxNzU4MjI5MzM4LCJleHAiOjE3ODk3NjUzMzh9.M6cx-8yLngxfqn4QgogbVSfdUIcAENIWFqNWOmwkxkw"
+  }
 }

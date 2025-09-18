@@ -32,7 +32,8 @@ export default function HeroBackgroundCard({
   const [tempOverlaySettings, setTempOverlaySettings] = useState(() => ({
     overlayType: siteConfig.heroOverlays?.[imageKey]?.overlayType || 'none',
     overlayOpacity: siteConfig.heroOverlays?.[imageKey]?.overlayOpacity || 50,
-    overlayColor: siteConfig.heroOverlays?.[imageKey]?.overlayColor || '#000000'
+    overlayColor: siteConfig.heroOverlays?.[imageKey]?.overlayColor || '#000000',
+    videoPosition: siteConfig.heroOverlays?.[imageKey]?.videoPosition ?? 50
   }));
   const [tempPageSelections, setTempPageSelections] = useState(() => {
     const selections: Record<string, boolean> = {};
@@ -69,14 +70,38 @@ export default function HeroBackgroundCard({
     <Card key={index} className="p-4">
       <div className="space-y-4">
         <div className="relative">
-          <img 
-            src={image.path} 
-            alt="Hero background"
-            className="w-full h-32 object-cover rounded-lg"
-            onError={(e) => {
-              e.currentTarget.src = 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg';
-            }}
-          />
+          {image.type === 'video' || /\.(mp4|webm|ogg)$/i.test(image.path) ? (
+            <video
+              src={image.path}
+              className="w-full h-32 object-cover rounded-lg bg-black"
+              style={{ 
+                objectPosition: `center ${tempOverlaySettings.videoPosition}%`
+              }}
+              controls={false}
+              muted
+              autoPlay
+              loop
+              playsInline
+              onError={(e) => {
+                // no-op fallback: show a placeholder poster by replacing with an img
+                const t = e.currentTarget as HTMLVideoElement;
+                t.style.display = 'none';
+                const img = document.createElement('img');
+                img.src = 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg';
+                img.className = 'w-full h-32 object-cover rounded-lg';
+                t.parentElement?.appendChild(img);
+              }}
+            />
+          ) : (
+            <img 
+              src={image.path} 
+              alt="Hero background"
+              className="w-full h-32 object-cover rounded-lg"
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg';
+              }}
+            />
+          )}
           <Button
             variant="outline"
             size="sm"
@@ -180,6 +205,32 @@ export default function HeroBackgroundCard({
                 </div>
               )}
             </div>
+
+            {(image.type === 'video' || /\.(mp4|webm|ogg)$/i.test(image.path)) && (
+              <div>
+                <Label className="text-xs flex justify-between">
+                  Video Position <span className="text-gray-500">{tempOverlaySettings.videoPosition ?? 50}%</span>
+                </Label>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={tempOverlaySettings.videoPosition ?? 50}
+                  onChange={(e) => {
+                    handleOverlayChange('videoPosition', parseInt(e.target.value));
+                  }}
+                  className="w-full mt-2"
+                />
+                <div className="flex justify-between text-[10px] text-gray-500 mt-1">
+                  <span>Top</span>
+                  <span>Center</span>
+                  <span>Bottom</span>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Drag the slider to adjust the video position
+                </p>
+              </div>
+            )}
             
             <div className="pt-2">
               <Button

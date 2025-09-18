@@ -17,22 +17,36 @@ export default function MediaManager() {
   const [heroImageFile, setHeroImageFile] = useState<File | null>(null);
   const [heroBackgroundFile, setHeroBackgroundFile] = useState<File | null>(null);
   const [uploadedHeroBackgrounds, setUploadedHeroBackgrounds] = useState<any[]>([]);
+  const [videoUrl, setVideoUrl] = useState<string>('');
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
   const [isUploadingFavicon, setIsUploadingFavicon] = useState(false);
   const [isUploadingHeroImage, setIsUploadingHeroImage] = useState(false);
   const [isUploadingHeroBackground, setIsUploadingHeroBackground] = useState(false);
 
   useEffect(() => {
-    loadSiteConfig();
-    loadServicesConfig();
-    loadUploadedHeroBackgrounds();
+    // Ensure site config is loaded first so uploaded hero backgrounds can merge any video URLs
+    (async () => {
+      await loadSiteConfig();
+      await loadServicesConfig();
+    })();
   }, []);
+
+  // Separate effect to load hero backgrounds after siteConfig changes
+  useEffect(() => {
+    if (siteConfig) {
+      loadUploadedHeroBackgrounds();
+    }
+  }, [siteConfig]);
 
   const loadSiteConfig = async () => {
     try {
       const response = await fetch('/api/admin/content?type=site-config');
       if (response.ok) {
         const data = await response.json();
+        // Initialize heroVideos if not present
+        if (!data.heroVideos) {
+          data.heroVideos = {};
+        }
         setSiteConfig(data);
       }
     } catch (error) {
@@ -139,17 +153,87 @@ export default function MediaManager() {
 
   const loadUploadedHeroBackgrounds = async () => {
     try {
+      // Load uploaded image files
       const response = await fetch('/api/admin/upload');
       if (response.ok) {
         const images = await response.json();
-        setUploadedHeroBackgrounds(images.filter((img: any) => 
+        const heroBackgroundImages = images.filter((img: any) => 
           img.filename.includes('hero-background') || 
           img.type === 'hero-background'
-        ));
+        );
+
+        // Load videos from heroVideos
+        const videoEntries = siteConfig?.heroVideos 
+          ? Object.entries(siteConfig.heroVideos).map(([filename, url]) => ({
+              filename,
+              path: url,
+              type: 'video'
+            }))
+          : [];
+
+        // Combine images and videos
+        setUploadedHeroBackgrounds([...videoEntries, ...heroBackgroundImages]);
       }
     } catch (error) {
       console.error('Failed to load uploaded hero backgrounds:', error);
     }
+  };
+
+  const handleAddVideoUrl = async () => {
+    if (!videoUrl || !videoUrl.trim()) {
+      alert('Please enter a video URL');
+      return;
+    }
+
+    // Basic validation: must be an http(s) url
+    try {
+      const parsed = new URL(videoUrl);
+      if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error('Invalid protocol');
+    } catch (err) {
+      alert('Please enter a valid URL (starting with http:// or https://)');
+      return;
+    }
+
+    // Create a video entry similar to uploaded images so HeroBackgroundCard can use it
+    const filename = `video-${Date.now()}`;
+    const videoEntry = {
+      filename,
+      path: videoUrl,
+      type: 'video'
+    };
+
+    // Ensure siteConfig is loaded before writing
+    if (!siteConfig) {
+      await loadSiteConfig();
+    }
+
+    // Update local state optimistically
+    setUploadedHeroBackgrounds(prev => [videoEntry, ...prev]);
+
+    // Store video in dedicated heroVideos section
+    const updatedConfig = {
+      ...(siteConfig || {}),
+      heroVideos: {
+        ...((siteConfig && siteConfig.heroVideos) || {}),
+        [filename]: videoUrl
+      },
+      // Clear any existing references in old storage locations
+      heroOverlayByPath: {
+        ...((siteConfig && siteConfig.heroOverlayByPath) || {})
+      },
+      heroBackgrounds: {
+        ...((siteConfig && siteConfig.heroBackgrounds) || {})
+      },
+      heroOverlays: {
+        ...((siteConfig && siteConfig.heroOverlays) || {})
+      }
+    };
+
+    setSiteConfig(updatedConfig);
+    await saveSiteConfig(updatedConfig);
+
+    setVideoUrl('');
+    alert('Video added to media library. You can now assign it to pages and configure overlays.');
   };
 
 
@@ -223,11 +307,57 @@ export default function MediaManager() {
         // Update site config if changes were made
         if (configUpdated) {
           updatedConfig.heroBackgrounds = updatedHeroBackgrounds;
+          // Remove any overlay-by-path entries
+          if (updatedConfig.heroOverlayByPath) {
+            Object.keys(updatedConfig.heroOverlayByPath).forEach(key => {
+              if (updatedConfig.heroOverlayByPath[key] === imagePath || key === imagePath) {
+                delete updatedConfig.heroOverlayByPath[key];
+              }
+            });
+          }
           await saveSiteConfig(updatedConfig);
         }
       }
       
-      // Now delete the file
+      // If this is a video entry that was added via URL, we don't call server DELETE
+      if (filename.startsWith('video-')) {
+        // Find the video path in current state
+        const videoEntry = uploadedHeroBackgrounds.find(img => img.filename === filename);
+        const videoPath = videoEntry?.path;
+        const updatedConfig = { ...siteConfig };
+
+        // Remove from heroVideos section
+        if (updatedConfig.heroVideos) {
+          delete updatedConfig.heroVideos[filename];
+        }
+
+        // Remove any heroBackgrounds that reference this video path
+        if (videoPath && updatedConfig.heroBackgrounds) {
+          let removed = false;
+          Object.keys(updatedConfig.heroBackgrounds).forEach(pageKey => {
+            if (updatedConfig.heroBackgrounds[pageKey] === videoPath) {
+              delete updatedConfig.heroBackgrounds[pageKey];
+              removed = true;
+            }
+          });
+
+          if (removed) {
+            updatedConfig.heroBackgrounds = { ...updatedConfig.heroBackgrounds };
+          }
+
+          // Remove overlay-by-path entry for this video path
+          if (updatedConfig.heroOverlayByPath && videoPath) {
+            delete updatedConfig.heroOverlayByPath[videoPath];
+          }
+        }
+
+        await saveSiteConfig(updatedConfig);
+        setUploadedHeroBackgrounds(prev => prev.filter(img => img.filename !== filename));
+        alert('Video removed from library.');
+        return;
+      }
+
+      // Now delete the file from server for uploaded images
       const response = await fetch(`/api/admin/upload?filename=${encodeURIComponent(filename)}`, {
         method: 'DELETE',
       });
@@ -555,6 +685,25 @@ export default function MediaManager() {
               )}
             </div>
 
+            {/* Video URL Input */}
+            <div className="pt-4">
+              <Label htmlFor="videoUrl">Add Video URL (Supabase bucket)</Label>
+              <div className="mt-2 flex space-x-2">
+                <Input
+                  id="videoUrl"
+                  placeholder="https://your-supabase-bucket.storage/.../video.mp4"
+                  value={videoUrl}
+                  onChange={(e) => setVideoUrl(e.target.value)}
+                />
+                <Button onClick={handleAddVideoUrl}>
+                  Add Video
+                </Button>
+              </div>
+              <p className="text-xs text-gray-500 mt-1">
+                Paste a public video URL and add it to the media library. You can then assign it as a hero background and set overlays.
+              </p>
+            </div>
+
             {/* Hero Background Images Management */}
             {uploadedHeroBackgrounds.length > 0 && (
               <div>
@@ -589,6 +738,11 @@ export default function MediaManager() {
                           heroOverlays: {
                             ...siteConfig.heroOverlays,
                             [imageKey]: overlaySettings
+                          },
+                          // Also save overlay settings keyed by the full path so remote URLs (videos) can be looked up
+                          heroOverlayByPath: {
+                            ...siteConfig.heroOverlayByPath,
+                            [image.path]: overlaySettings
                           }
                         };
                         setSiteConfig(updatedConfig);

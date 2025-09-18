@@ -651,6 +651,99 @@ export default function HomeContentManager({ homeContent, setHomeContent, onSave
             </CardContent>
           </Card>
 
+          {/* Testimonials Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Testimonials Section</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex items-center space-x-2">
+                <Switch
+                  checked={sections.testimonials?.enabled !== false}
+                  onCheckedChange={(checked) => setHomeContent({
+                    ...homeContent,
+                    sections: {
+                      ...sections,
+                      testimonials: { ...sections.testimonials, enabled: checked }
+                    }
+                  })}
+                />
+                <Label>Show Testimonials Section</Label>
+              </div>
+
+              {sections.testimonials?.enabled !== false && (
+                <>
+                  <div className="flex items-center space-x-2">
+                    <Switch
+                      checked={sections.testimonials?.useEmbed === true}
+                      onCheckedChange={(checked) => setHomeContent({
+                        ...homeContent,
+                        sections: {
+                          ...sections,
+                          testimonials: { ...sections.testimonials, useEmbed: checked }
+                        }
+                      })}
+                    />
+                    <Label>Use Custom Embed Code</Label>
+                  </div>
+
+                  {sections.testimonials?.useEmbed ? (
+                    <div className="space-y-2">
+                      <Label htmlFor="testimonialsEmbed">Embed Code</Label>
+                      <Textarea
+                        id="testimonialsEmbed"
+                        value={sections.testimonials?.embedCode || ''}
+                        onChange={(e) => setHomeContent({
+                          ...homeContent,
+                          sections: {
+                            ...sections,
+                            testimonials: { ...sections.testimonials, embedCode: e.target.value }
+                          }
+                        })}
+                        placeholder="<!-- Paste your embed code here (e.g., Elfsight widget code) -->"
+                        className="min-h-[150px] font-mono text-sm"
+                      />
+                      <p className="text-sm text-gray-500">
+                        You can paste any embed code here, including Elfsight widgets or other third-party review systems.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="testimonialsTitle">Section Title</Label>
+                        <Input
+                          id="testimonialsTitle"
+                          value={sections.testimonials?.title ?? 'What Our Customers Say'}
+                          onChange={(e) => setHomeContent({
+                            ...homeContent,
+                            sections: {
+                              ...sections,
+                              testimonials: { ...sections.testimonials, title: e.target.value }
+                            }
+                          })}
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="testimonialsSubtitle">Section Subtitle</Label>
+                        <Input
+                          id="testimonialsSubtitle"
+                          value={sections.testimonials?.subtitle ?? 'Don\'t just take our word for it'}
+                          onChange={(e) => setHomeContent({
+                            ...homeContent,
+                            sections: {
+                              ...sections,
+                              testimonials: { ...sections.testimonials, subtitle: e.target.value }
+                            }
+                          })}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+            </CardContent>
+          </Card>
+
           {/* Why Choose Us Section */}
           <Card>
             <CardHeader>

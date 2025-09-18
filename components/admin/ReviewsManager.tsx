@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Switch } from '@/components/ui/switch';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Trash2, Plus, Star, GripVertical, ChevronDown, ChevronRight } from 'lucide-react';
@@ -22,7 +23,9 @@ export default function ReviewsManager({ onSave, isLoading }: ReviewsManagerProp
       testimonials: {
         title: "What Our Customers Say",
         subtitle: "Don't just take our word for it",
-        items: []
+        items: [],
+        useEmbed: false,
+        embedCode: ""
       }
     }
   });
@@ -158,35 +161,74 @@ export default function ReviewsManager({ onSave, isLoading }: ReviewsManagerProp
           <CardTitle>Reviews Section Settings</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="testimonialsTitle">Section Title</Label>
-              <Input
-                id="testimonialsTitle"
-                value={homeContent.sections.testimonials.title}
-                onChange={(e) => setHomeContent({
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
+              <Switch
+                id="useEmbed"
+                checked={homeContent.sections.testimonials.useEmbed}
+                onCheckedChange={(checked) => setHomeContent({
                   ...homeContent,
                   sections: {
                     ...homeContent.sections,
-                    testimonials: { ...homeContent.sections.testimonials, title: e.target.value }
+                    testimonials: { ...homeContent.sections.testimonials, useEmbed: checked }
                   }
                 })}
               />
+              <Label htmlFor="useEmbed">Use Custom Embed Code</Label>
             </div>
-            <div>
-              <Label htmlFor="testimonialsSubtitle">Section Subtitle</Label>
-              <Input
-                id="testimonialsSubtitle"
-                value={homeContent.sections.testimonials.subtitle}
-                onChange={(e) => setHomeContent({
-                  ...homeContent,
-                  sections: {
-                    ...homeContent.sections,
-                    testimonials: { ...homeContent.sections.testimonials, subtitle: e.target.value }
-                  }
-                })}
-              />
-            </div>
+
+            {homeContent.sections.testimonials.useEmbed ? (
+              <div className="space-y-2">
+                <Label htmlFor="embedCode">Embed Code</Label>
+                <Textarea
+                  id="embedCode"
+                  value={homeContent.sections.testimonials.embedCode}
+                  onChange={(e) => setHomeContent({
+                    ...homeContent,
+                    sections: {
+                      ...homeContent.sections,
+                      testimonials: { ...homeContent.sections.testimonials, embedCode: e.target.value }
+                    }
+                  })}
+                  placeholder="Paste your embed code here (e.g., Elfsight widget code)"
+                  className="min-h-[150px] font-mono text-sm"
+                />
+                <p className="text-sm text-gray-500">
+                  You can paste any embed code here, including Elfsight widgets or other third-party review systems.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="testimonialsTitle">Section Title</Label>
+                  <Input
+                    id="testimonialsTitle"
+                    value={homeContent.sections.testimonials.title}
+                    onChange={(e) => setHomeContent({
+                      ...homeContent,
+                      sections: {
+                        ...homeContent.sections,
+                        testimonials: { ...homeContent.sections.testimonials, title: e.target.value }
+                      }
+                    })}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="testimonialsSubtitle">Section Subtitle</Label>
+                  <Input
+                    id="testimonialsSubtitle"
+                    value={homeContent.sections.testimonials.subtitle}
+                    onChange={(e) => setHomeContent({
+                      ...homeContent,
+                      sections: {
+                        ...homeContent.sections,
+                        testimonials: { ...homeContent.sections.testimonials, subtitle: e.target.value }
+                      }
+                    })}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
