@@ -271,7 +271,7 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
               >
                 {content.hero.trustIndicators.map((indicator: any, index: number) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
                     <span
                       className={`text-sm ${
                         getTextClasses().includes('white') ? 'text-white/80' : 'text-gray-600'

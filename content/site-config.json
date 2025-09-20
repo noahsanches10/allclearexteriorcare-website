@@ -1,33 +1,34 @@
 {
-  "siteName": "Mr Pane Window Cleaning",
-  "tagline": "Northern Utah's Best Window Cleaning",
-  "logo": "/uploads/1755721854470.jpg",
+  "siteName": "Lone Star Shine Exterior Cleaning",
+  "tagline": "Austin's Top Exterior Cleaning",
+  "logo": "/uploads/1758393241841.png",
   "brandColors": {
-    "primary": "#080D32",
-    "secondary": "#8A58FC",
-    "accent": "#63D8E8"
+    "primary": "#E1081F",
+    "secondary": "#E1E1E1",
+    "accent": "#013792"
   },
-  "headerStyle": "primary",
-  "footerStyle": "primary",
+  "headerStyle": "transparent",
+  "footerStyle": "light",
   "contact": {
-    "phone": "(435) 999-2425",
-    "email": "matt@mrpanewindows.com",
+    "phone": "(512) 359-8746",
+    "email": "lonestarshineexteriorcleaning@gmail.com",
     "address": ""
   },
   "serviceAreas": [
-    "Logan",
-    "Hyrum",
-    "Smithfield",
-    "Richmond"
+    "Austin",
+    "Round Rock",
+    "Lakeway",
+    "Elgin",
+    "Dripping Springs"
   ],
   "socialMedia": {
-    "facebook": "",
-    "instagram": "",
+    "facebook": "https://www.facebook.com/732023893316894?ref=pl_edit_xav_ig_profile_page_web",
+    "instagram": "https://www.instagram.com/lonestar.shine",
     "nextdoor": "",
     "google": ""
   },
   "headerTextStyle": "auto",
-  "headerCtaStyle": "accent",
+  "headerCtaStyle": "primary",
   "bannerLayout": "contained",
   "bannerStyle": "secondary",
   "ctaBanner": {
@@ -38,9 +39,9 @@
     "primaryLink": "/contact",
     "secondaryLink": "tel:(435) 999-2425",
     "primaryEnabled": true,
-    "primaryButtonColor": "accent",
-    "style": "gradient",
-    "layout": "contained",
+    "primaryButtonColor": "primary",
+    "style": "accent",
+    "layout": "fullwidth",
     "secondaryButtonColor": "white",
     "showOnPages": {
       "home": true,
@@ -51,20 +52,20 @@
       "about": true,
       "reviews": true
     },
-    "primaryButtonTextColor": "primary",
+    "primaryButtonTextColor": "white",
     "secondaryButtonTextColor": "primary"
   },
-  "showLogoInFooter": false,
+  "showLogoInFooter": true,
   "logoSize": 60,
-  "favicon": "/uploads/1755721882300.jpg",
-  "footerTextColor": "auto",
+  "favicon": "/uploads/1758393265973.png",
+  "footerTextColor": "accent",
   "fontFamily": "poppins",
   "heroBackgrounds": {
     "service-window-cleaning": "/uploads/hero-background-1756167043123.webp",
     "service-gutter-cleaning": "/uploads/hero-background-1756167062732.jpg",
     "service-solar-panel-cleaning": "/uploads/hero-background-1756167092113.webp",
     "service-house-washing": "/uploads/hero-background-1756167198579.jpg",
-    "home": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/hero.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL2hlcm8ubW92IiwiaWF0IjoxNzU4MjI5MzM4LCJleHAiOjE3ODk3NjUzMzh9.M6cx-8yLngxfqn4QgogbVSfdUIcAENIWFqNWOmwkxkw"
+    "home": "/uploads/hero-background-1758398410580.png"
   },
   "heroStyling": {
     "backgroundType": "gradient",
@@ -89,22 +90,26 @@
     "image-hero-background-1756167043123.webp": {
       "overlayType": "dark",
       "overlayOpacity": 50,
-      "overlayColor": "#000000"
+      "overlayColor": "#000000",
+      "videoPosition": 23
     },
     "image-hero-background-1756167062732.jpg": {
       "overlayType": "dark",
       "overlayOpacity": 50,
-      "overlayColor": "#000000"
+      "overlayColor": "#000000",
+      "videoPosition": 50
     },
     "image-hero-background-1756167092113.webp": {
       "overlayType": "dark",
       "overlayOpacity": 50,
-      "overlayColor": "#000000"
+      "overlayColor": "#000000",
+      "videoPosition": 50
     },
     "image-hero-background-1756167198579.jpg": {
       "overlayType": "dark",
       "overlayOpacity": 50,
-      "overlayColor": "#000000"
+      "overlayColor": "#000000",
+      "videoPosition": 50
     },
     "image-hero-background-1756180061976.webp": {
       "overlayType": "dark",
@@ -151,33 +156,46 @@
       "overlayOpacity": 50,
       "overlayColor": "#000000",
       "videoPosition": 23
+    },
+    "image-hero-background-1758398410580.png": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
     }
   },
-  "headerCtaTextColor": "primary",
+  "headerCtaTextColor": "white",
   "heroOverlayByPath": {
-    "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/hero.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL2hlcm8ubW92IiwiaWF0IjoxNzU4MjI5MzM4LCJleHAiOjE3ODk3NjUzMzh9.M6cx-8yLngxfqn4QgogbVSfdUIcAENIWFqNWOmwkxkw": {
+    "/uploads/hero-background-1756167043123.webp": {
       "overlayType": "dark",
       "overlayOpacity": 50,
       "overlayColor": "#000000",
       "videoPosition": 23
     },
-    "/uploads/hero-background-1756167043123.webp": {
-      "overlayType": "dark",
-      "overlayOpacity": 50,
-      "overlayColor": "#000000"
-    },
     "/uploads/hero-background-1756167062732.jpg": {
       "overlayType": "dark",
       "overlayOpacity": 50,
-      "overlayColor": "#000000"
+      "overlayColor": "#000000",
+      "videoPosition": 50
     },
     "/uploads/hero-background-1756167092113.webp": {
       "overlayType": "dark",
       "overlayOpacity": 50,
-      "overlayColor": "#000000"
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    },
+    "/uploads/hero-background-1756167198579.jpg": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    },
+    "/uploads/hero-background-1758398410580.png": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
     }
   },
-  "heroVideos": {
-    "video-1758231374867": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/hero.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL2hlcm8ubW92IiwiaWF0IjoxNzU4MjI5MzM4LCJleHAiOjE3ODk3NjUzMzh9.M6cx-8yLngxfqn4QgogbVSfdUIcAENIWFqNWOmwkxkw"
-  }
+  "heroVideos": {}
 }

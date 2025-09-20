@@ -28,7 +28,7 @@ function getBackgroundClass(background: string) {
 export default function Gallery({ content }: GalleryProps) {
   const section = content.sections?.gallery;
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   if (!section?.enabled || !section?.items?.length) {
     return null;
   }
@@ -37,7 +37,7 @@ export default function Gallery({ content }: GalleryProps) {
   const autoRotateInterval = parseInt(section.autoRotateInterval || '5');
   const items = section.items;
 
-  // Carousel navigation functions
+  // Carousel navigation
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % items.length);
   }, [items.length]);
@@ -50,7 +50,7 @@ export default function Gallery({ content }: GalleryProps) {
     setCurrentSlide(index);
   }, []);
 
-  // Auto-rotation effect for carousel
+  // Auto-rotation
   useEffect(() => {
     if (displayStyle === 'carousel' && autoRotateInterval > 0) {
       const interval = setInterval(nextSlide, autoRotateInterval * 1000);
@@ -58,58 +58,155 @@ export default function Gallery({ content }: GalleryProps) {
     }
   }, [displayStyle, autoRotateInterval, nextSlide, currentSlide]);
 
-  const renderGalleryItem = (item: any, index: number, isCarousel: boolean = false) => {
-    // Use taller containers for single images to better accommodate vertical images
-    const isSingleImage = !item.afterImage;
-    const imageHeight = isSingleImage && isCarousel ? 'h-96 md:h-[28rem]' : 'h-64 md:h-80';
-    
+  // Helpers
+  const isPortrait = (img: any) => {
+    if (!img) return false;
+    if (typeof img === 'object' && img.width && img.height) {
+      return img.height > img.width;
+    }
+    if (typeof img === 'string') {
+      const match = img.match(/-(\d{2,5})x(\d{2,5})\./);
+      if (match) {
+        const w = parseInt(match[1], 10);
+        const h = parseInt(match[2], 10);
+        return h > w;
+      }
+    }
+    return false;
+  };
+
+  const getSrcDims = (img: any) => {
+    if (!img) return { src: '', width: undefined, height: undefined };
+    if (typeof img === 'string') return { src: img, width: undefined, height: undefined };
+    return { src: img.src, width: img.width, height: img.height };
+  };
+
+  const getDimsWithFallback = (portrait: boolean, width?: number, height?: number) => {
+    if (width && height) return { width, height };
+    return portrait
+      ? { width: 800, height: 1200 }
+      : { width: 1600, height: 1000 };
+  };
+
+  // For carousel only: landscape wrapper
+  const getLandscapeAspect = () => 'aspect-[16/10]';
+
+  const renderOneImage = (
+    src: string,
+    alt: string,
+    portrait: boolean,
+    dims?: { width?: number; height?: number },
+    badge?: 'Before' | 'After',
+    badgePos: 'left' | 'right' = 'left',
+    forceNaturalHeight: boolean = false
+  ) => {
+    const { width, height } = getDimsWithFallback(portrait, dims?.width, dims?.height);
+
+    // In grid mode we always use natural height
+    if (forceNaturalHeight) {
+      return (
+        <div className="relative w-full">
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className="w-full h-auto object-contain"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {badge && (
+            <div className={`absolute top-4 ${badgePos === 'left' ? 'left-4' : 'right-4'}`}>
+              <Badge variant="secondary" className={badge === 'Before' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}>
+                {badge}
+              </Badge>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Carousel: keep landscape aspect ratio boxes
+    if (!portrait) {
+      return (
+        <div className={`relative ${getLandscapeAspect()}`}>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {badge && (
+            <div className={`absolute top-4 ${badgePos === 'left' ? 'left-4' : 'right-4'}`}>
+              <Badge variant="secondary" className={badge === 'Before' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}>
+                {badge}
+              </Badge>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Carousel: portrait inside aspect box
     return (
-      <Card 
-        key={index} 
+      <div className="relative w-full">
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="w-full h-auto object-contain"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        {badge && (
+          <div className={`absolute top-4 ${badgePos === 'left' ? 'left-4' : 'right-4'}`}>
+            <Badge variant="secondary" className={badge === 'Before' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}>
+              {badge}
+            </Badge>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderGalleryItem = (item: any, index: number, isCarousel: boolean = false) => {
+    const { src: beforeSrc, width: bw, height: bh } = getSrcDims(item.beforeImage);
+    const { src: afterSrc, width: aw, height: ah } = getSrcDims(item.afterImage);
+
+    const beforePortrait = isPortrait(item.beforeImage);
+    const afterPortrait = isPortrait(item.afterImage);
+
+    return (
+      <Card
+        key={index}
         className={`border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${
           isCarousel ? 'w-full' : ''
         }`}
       >
         <CardContent className="p-0">
           <div className="relative">
-            {/* Gallery Images */}
-            <div className={`grid ${item.afterImage ? 'grid-cols-2' : 'grid-cols-1'}`}>
-              {item.beforeImage && (
-                <div className={`relative ${imageHeight}`}>
-                  <Image
-                    src={item.beforeImage}
-                    alt={item.afterImage ? `${item.title} - Before` : item.title}
-                    fill
-                    className="object-cover"
-                  />
-                  {item.afterImage && (
-                    <div className="absolute top-4 left-4">
-                      <Badge variant="secondary" className="bg-red-100 text-red-800">
-                        Before
-                      </Badge>
-                    </div>
-                  )}
-                </div>
+            {/* Images */}
+            <div className={`grid ${afterSrc ? 'grid-cols-2' : 'grid-cols-1'} items-start`}>
+              {beforeSrc && renderOneImage(
+                beforeSrc,
+                afterSrc ? `${item.title} - Before` : item.title,
+                !!beforePortrait,
+                { width: bw, height: bh },
+                afterSrc ? 'Before' : undefined,
+                'left',
+                !isCarousel // force natural height in grid
               )}
-              {item.afterImage && (
-                <div className={`relative ${imageHeight}`}>
-                  <Image
-                    src={item.afterImage}
-                    alt={item.beforeImage ? `${item.title} - After` : item.title}
-                    fill
-                    className="object-cover"
-                  />
-                  {item.beforeImage && (
-                    <div className="absolute top-4 right-4">
-                      <Badge variant="secondary" className="bg-green-100 text-green-800">
-                        After
-                      </Badge>
-                    </div>
-                  )}
-                </div>
+              {afterSrc && renderOneImage(
+                afterSrc,
+                beforeSrc ? `${item.title} - After` : item.title,
+                !!afterPortrait,
+                { width: aw, height: ah },
+                beforeSrc ? 'After' : undefined,
+                'right',
+                !isCarousel // force natural height in grid
               )}
             </div>
-            
+
             {/* Content */}
             {(item.title || item.description) && (
               <div className="p-6">
@@ -146,16 +243,16 @@ export default function Gallery({ content }: GalleryProps) {
 
         {/* Gallery Content */}
         {displayStyle === 'grid' ? (
-          /* Grid Layout */
+          // Grid Layout — natural heights now
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {items.map((item: any, index: number) => renderGalleryItem(item, index))}
           </div>
         ) : (
-          /* Carousel Layout */
+          // Carousel Layout — aspect ratio maintained
           <div className="relative max-w-4xl mx-auto">
             {/* Carousel Container */}
             <div className="relative overflow-hidden rounded-lg">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
@@ -195,8 +292,8 @@ export default function Gallery({ content }: GalleryProps) {
                     key={index}
                     onClick={() => goToSlide(index)}
                     className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                      currentSlide === index 
-                        ? 'bg-primary' 
+                      currentSlide === index
+                        ? 'bg-primary'
                         : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                     aria-label={`Go to slide ${index + 1}`}

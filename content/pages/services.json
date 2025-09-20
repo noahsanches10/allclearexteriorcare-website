@@ -136,7 +136,7 @@
       "link": "/contact",
       "enabled": true,
       "color": "accent",
-      "textColor": "primary"
+      "textColor": "white"
     },
     "secondary": {
       "text": "Call Now",

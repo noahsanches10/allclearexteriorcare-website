@@ -1,17 +1,17 @@
 {
   "hero": {
-    "title": "Northern Utah's Best Window Cleaning",
-    "subtitle": "",
+    "title": "Sparkle Bright with Austin’s Top Exterior Cleaning",
+    "subtitle": "Lone Star Shine Exterior Cleaning brings unmatched care and quality to every home and business in Austin, making your property shine like never before.",
     "image": "",
     "ctaText": "Get Free Estimate",
     "ctaLink": "/contact",
     "cta": {
       "primary": {
         "text": "Call Now",
-        "link": "tel:(435) 999-2425",
+        "link": "tel:(512) 359-8746",
         "enabled": true,
         "color": "accent",
-        "textColor": "primary"
+        "textColor": "white"
       },
       "secondary": {
         "text": "Get Free Estimate",
@@ -50,24 +50,24 @@
     },
     "whyChooseUs": {
       "enabled": true,
-      "title": "Why Logan Chooses Mr Pane",
+      "title": "Why Austin Chooses Lone Star",
       "subtitle": "",
-      "background": "gray",
+      "background": "secondary-light",
       "items": [
         {
           "icon": "award",
-          "title": "Quality Guarantee",
-          "description": "100% satisfaction guarantee on all our Cache Valley exterior cleaning services. If you're not happy, we'll make it right."
+          "title": "Locally Owned, Community Trusted",
+          "description": "As Austin natives, Mateo and Logan pour heart into every exterior cleaning job, building trust with neighbors through reliable, friendly service."
         },
         {
           "icon": "droplets",
-          "title": "Eco-Friendly",
-          "description": "We use environmentally safe cleaning solutions that are tough on dirt but gentle on your Northern Utah landscaping."
+          "title": "Professional Results, Every Time",
+          "description": "Our skilled team delivers sparkling Austin window cleaning and powerful pressure washing that transforms your property with precision and care."
         },
         {
-          "icon": "clock",
-          "title": "Reliable Service",
-          "description": "Punctual, professional service with flexible scheduling to fit your busy Logan and Cache Valley lifestyle."
+          "icon": "users",
+          "title": "Customer-First Approach",
+          "description": "We prioritize your satisfaction, offering tailored gutter cleaning and house washing solutions with clear communication and no shortcuts."
         }
       ]
     },
@@ -101,7 +101,7 @@
       ],
       "useEmbed": true,
       "embedCode": "<script src=\"https://elfsightcdn.com/platform.js\" async></script>\n<div class=\"elfsight-app-893eac12-ce22-4682-9d4b-759a3336e8d5\" data-elfsight-app-lazy></div>",
-      "iframeUrl": "https://893eac12ce2246829d4b759a3336e8d5.elf.site",
+      "iframeUrl": "https://e5c4e539a3814d408d24484ef9199c7e.elf.site",
       "iframeHeight": "275px"
     },
     "gallery": {
@@ -112,48 +112,48 @@
       "items": [
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1756227165412.png",
+          "beforeImage": "/uploads/gallery-1758398512706.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1756227200073.png",
+          "beforeImage": "/uploads/gallery-1758398522693.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1756227226630.png",
+          "beforeImage": "/uploads/gallery-1758398533937.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1756227262820.png",
+          "beforeImage": "/uploads/gallery-1758398553010.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1756227286033.png",
+          "beforeImage": "/uploads/gallery-1758398568534.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1756227306533.png",
+          "beforeImage": "/uploads/gallery-1758398579579.png",
           "afterImage": "",
           "description": ""
         }
       ],
-      "displayStyle": "carousel"
+      "displayStyle": "grid"
     },
     "faq": {
       "enabled": true,
       "title": "Frequently Asked Questions",
       "subtitle": "",
-      "background": "gray",
+      "background": "secondary-light",
       "items": [
         {
           "question": "How often should I have my windows professionally cleaned?",
@@ -215,7 +215,7 @@
           "popular": false
         }
       ],
-      "background": "gray",
+      "background": "secondary-light",
       "title": "Save With Service Plans",
       "subtitle": ""
     }
