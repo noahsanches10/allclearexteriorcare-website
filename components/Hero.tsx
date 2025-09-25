@@ -204,7 +204,7 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div
           className={
-            content.hero.image
+            (content.hero.image || (content.hero.useVideo && content.hero.videoUrl))
               ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'
               : 'text-center max-w-4xl mx-auto'
           }
@@ -227,7 +227,7 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
 
             <div
               className={`flex flex-col sm:flex-row gap-4 ${
-                !content.hero.image ? 'justify-center' : ''
+                !(content.hero.image || (content.hero.useVideo && content.hero.videoUrl)) ? 'justify-center' : ''
               }`}
             >
               {cta?.primary?.enabled !== false && (
@@ -266,7 +266,7 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
             {content.hero.trustIndicators && content.hero.trustIndicators.length > 0 && (
               <div
                 className={`flex flex-wrap items-center gap-6 pt-4 ${
-                  !content.hero.image ? 'justify-center' : ''
+                  !(content.hero.image || (content.hero.useVideo && content.hero.videoUrl)) ? 'justify-center' : ''
                 }`}
               >
                 {content.hero.trustIndicators.map((indicator: any, index: number) => (
@@ -285,18 +285,43 @@ export default function Hero({ content, siteConfig, pageType = 'home' }: HeroPro
             )}
           </div>
 
-          {/* Hero Image */}
-          {content.hero.image && (
+          {/* Hero Image/Video */}
+          {(content.hero.image || (content.hero.useVideo && content.hero.videoUrl)) && (
             <div className="relative">
               <div className="relative z-10">
-                <Image
-                  src={content.hero.image}
-                  alt="Professional home service technician"
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-2xl object-cover"
-                  priority
-                />
+                {content.hero.useVideo && content.hero.videoUrl ? (
+                  <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ aspectRatio: 'auto' }}>
+                    {content.hero.videoUrl.includes('youtube.com/embed/') || 
+                     content.hero.videoUrl.includes('vimeo.com/') ? (
+                      <div className="aspect-video">
+                        <iframe
+                          src={content.hero.videoUrl}
+                          className="w-full h-full"
+                          allowFullScreen
+                          title="Hero Video"
+                        />
+                      </div>
+                    ) : (
+                      <video
+                        src={content.hero.videoUrl}
+                        className="w-full h-auto object-cover max-h-[600px]"
+                        controls
+                        muted
+                        playsInline
+                        style={{ minHeight: '300px' }}
+                      />
+                    )}
+                  </div>
+                ) : content.hero.image ? (
+                  <Image
+                    src={content.hero.image}
+                    alt="Professional home service technician"
+                    width={600}
+                    height={400}
+                    className="rounded-2xl shadow-2xl object-cover"
+                    priority
+                  />
+                ) : null}
               </div>
 
               {/* Decorative elements */}

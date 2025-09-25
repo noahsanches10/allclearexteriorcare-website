@@ -140,8 +140,8 @@
     },
     "secondary": {
       "text": "Call Now",
-      "link": "tel:(702) 843-7705",
-      "enabled": false
+      "link": "tel:(512) 359-8746",
+      "enabled": true
     }
   }
 }

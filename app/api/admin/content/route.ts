@@ -35,6 +35,9 @@ export async function GET(request: NextRequest) {
       case 'reviews':
         filePath = path.join(contentDirectory, 'pages', 'reviews.json');
         break;
+      case 'plan':
+        filePath = path.join(contentDirectory, 'pages', 'plan.json');
+        break;
       default:
         return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });
     }
@@ -76,6 +79,9 @@ export async function POST(request: NextRequest) {
         break;
       case 'reviews':
         filePath = path.join(contentDirectory, 'pages', 'reviews.json');
+        break;
+      case 'plan':
+        filePath = path.join(contentDirectory, 'pages', 'plan.json');
         break;
       default:
         return NextResponse.json({ error: 'Invalid content type' }, { status: 400 });

@@ -50,7 +50,8 @@
       "blog": true,
       "blogPosts": true,
       "about": true,
-      "reviews": true
+      "reviews": true,
+      "plan": true
     },
     "primaryButtonTextColor": "white",
     "secondaryButtonTextColor": "primary"
@@ -68,7 +69,7 @@
     "home": "/uploads/hero-background-1758398410580.png"
   },
   "heroStyling": {
-    "backgroundType": "gradient",
+    "backgroundType": "accent",
     "backgroundImage": ""
   },
   "heroOverlays": {

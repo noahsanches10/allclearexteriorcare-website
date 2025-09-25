@@ -1,0 +1,146 @@
+{
+  "hero": {
+    "title": "Lone Star Shine Service Plan",
+    "subtitle": "",
+    "image": "",
+    "videoUrl": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/Lone%20Star/serviceplan.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL0xvbmUgU3Rhci9zZXJ2aWNlcGxhbi5tb3YiLCJpYXQiOjE3NTg3NDk5MzIsImV4cCI6MTc5MDI4NTkzMn0.UweXXGpRU3Rc5yph1WrO9DCN45kP07SEx6xngiJDTaQ",
+    "useVideo": true,
+    "cta": {
+      "primary": {
+        "enabled": true,
+        "text": "Get Free Quote",
+        "link": "/contact",
+        "color": "primary",
+        "textColor": "white"
+      },
+      "secondary": {
+        "enabled": false,
+        "text": "Contact Us",
+        "link": "/contact",
+        "color": "outline",
+        "textColor": "primary"
+      }
+    }
+  },
+  "process": {
+    "enabled": true,
+    "title": "How It Works",
+    "description": "Your windows now stay crystal-clear, protected, and warrantied all year round!",
+    "image": "/uploads/1758761363488.jpg",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Deep Clean + Hard Water Removal",
+        "description": "We begin by restoring clarity, removing layers of grime and stubborn mineral deposits."
+      },
+      {
+        "step": 2,
+        "title": "Nanocoat Application",
+        "description": "We apply a clear barrier that resists hard water stains—a shield for lasting protection."
+      },
+      {
+        "step": 3,
+        "title": "Warranty Backed",
+        "description": "If spots appear between services, we’ll return to handle them at no extra cost."
+      },
+      {
+        "step": 4,
+        "title": "Quarterly Services",
+        "description": "Every season, we come back to renew your nanocoat and restore a streak-free finish."
+      }
+    ]
+  },
+  "benefits": {
+    "enabled": true,
+    "title": "Why Choose Our Plan",
+    "description": "Benefits you can count on",
+    "items": [
+      {
+        "title": "Professional Service",
+        "description": "Expert technicians with years of experience",
+        "icon": "shield"
+      },
+      {
+        "title": "Quality Guarantee",
+        "description": "100% satisfaction guaranteed",
+        "icon": "award"
+      },
+      {
+        "title": "Competitive Pricing",
+        "description": "Fair prices for premium service",
+        "icon": "dollar"
+      }
+    ]
+  },
+  "guarantee": {
+    "enabled": false,
+    "title": "Our Guarantee",
+    "description": "We stand behind our work",
+    "items": [
+      {
+        "title": "100% Satisfaction",
+        "description": "If you're not happy, we'll make it right"
+      },
+      {
+        "title": "Quality Work",
+        "description": "Professional service every time"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Contact us today for a free consultation",
+    "buttonText": "Get Free Quote",
+    "buttonLink": "/contact"
+  },
+  "pricing": {
+    "enabled": true,
+    "plans": [
+      {
+        "name": "Bi-Annual",
+        "price": "$99",
+        "period": "per visit",
+        "description": "",
+        "features": [
+          "Feature 1",
+          "Feature 2"
+        ],
+        "exclusions": [
+          "NOT INCLUDED"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Quarterly",
+        "price": "$99",
+        "period": "per visit",
+        "description": "",
+        "features": [
+          "Feature 1",
+          "Feature 2"
+        ],
+        "exclusions": [],
+        "popular": true
+      },
+      {
+        "name": "Monthly",
+        "price": "$99",
+        "period": "per visit",
+        "description": "",
+        "features": [
+          "Feature 1",
+          "Feature 2"
+        ],
+        "exclusions": [],
+        "popular": false
+      }
+    ],
+    "displayStyle": "list"
+  },
+  "sectionOrder": [
+    "process",
+    "pricing",
+    "benefits",
+    "guarantee"
+  ]
+}

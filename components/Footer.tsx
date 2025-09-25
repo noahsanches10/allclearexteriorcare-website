@@ -23,7 +23,7 @@ export default function Footer({ siteConfig, navigation }: FooterProps) {
       case 'gradient':
         return 'bg-gradient-to-r from-primary to-secondary text-white';
       case 'light':
-        return 'bg-gray-100 text-gray-900';
+        return 'bg-white text-primary';
       default:
         return 'bg-gray-900 text-white';
     }

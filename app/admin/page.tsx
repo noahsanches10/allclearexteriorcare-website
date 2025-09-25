@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Label } from '@/components/ui/label';
-import { Settings, FileText, Navigation, Palette, Upload, BookOpen, Home, ArrowLeft, Star } from 'lucide-react';
+import { Settings, FileText, Navigation, Palette, Upload, BookOpen, Home, ArrowLeft, Star, ClipboardList } from 'lucide-react';
 import Link from 'next/link';
 import BlogManager from '@/components/BlogManager';
 import SiteSettings from '@/components/admin/SiteSettings';
@@ -19,6 +19,7 @@ import ContactManager from '@/components/admin/ContactManager';
 import ServicesManager from '@/components/admin/ServicesManager';
 import AboutManager from '@/components/admin/AboutManager';
 import ReviewsManager from '@/components/admin/ReviewsManager';
+import PlanManager from '@/components/admin/PlanManager';
 import { Wrench } from 'lucide-react';
 
 // Simple password check - in production, you'd want this in an environment variable
@@ -249,7 +250,7 @@ export default function AdminPage() {
 
         <Tabs defaultValue="site" className="space-y-6">
           {/* Responsive Navigation */}
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-1 h-auto p-2">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 lg:grid-cols-11 gap-1 h-auto p-2">
             <TabsTrigger value="site" className="flex flex-col items-center space-y-1 h-16 text-xs">
               <Settings className="h-4 w-4" />
               <span>Site</span>
@@ -273,6 +274,10 @@ export default function AdminPage() {
             <TabsTrigger value="reviews" className="flex flex-col items-center space-y-1 h-16 text-xs">
               <Star className="h-4 w-4" />
               <span>Reviews</span>
+            </TabsTrigger>
+            <TabsTrigger value="plan" className="flex flex-col items-center space-y-1 h-16 text-xs">
+              <ClipboardList className="h-4 w-4" />
+              <span>Plan</span>
             </TabsTrigger>
             <TabsTrigger value="contact" className="flex flex-col items-center space-y-1 h-16 text-xs">
               <FileText className="h-4 w-4" />
@@ -349,6 +354,14 @@ export default function AdminPage() {
           {/* Reviews Tab */}
           <TabsContent value="reviews">
             <ReviewsManager
+              onSave={saveContent}
+              isLoading={isLoadingContent}
+            />
+          </TabsContent>
+
+          {/* Plan Tab */}
+          <TabsContent value="plan">
+            <PlanManager
               onSave={saveContent}
               isLoading={isLoadingContent}
             />

@@ -579,6 +579,38 @@ export default function NavigationManager({ navigation, setNavigation, onSave, i
                     />
                     <Label className="text-sm">Reviews Page</Label>
                   </div>
+                  <div className="flex items-center space-x-2">
+                    <Switch
+                      checked={siteConfig.ctaBanner?.showOnPages?.plan !== false}
+                      onCheckedChange={(checked) => setSiteConfig({
+                        ...siteConfig,
+                        ctaBanner: {
+                          ...siteConfig.ctaBanner,
+                          showOnPages: {
+                            ...siteConfig.ctaBanner?.showOnPages,
+                            plan: checked
+                          }
+                        }
+                      })}
+                    />
+                    <Label className="text-sm">Plan Page</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Switch
+                      checked={siteConfig.ctaBanner?.showOnPages?.contact !== false}
+                      onCheckedChange={(checked) => setSiteConfig({
+                        ...siteConfig,
+                        ctaBanner: {
+                          ...siteConfig.ctaBanner,
+                          showOnPages: {
+                            ...siteConfig.ctaBanner?.showOnPages,
+                            contact: checked
+                          }
+                        }
+                      })}
+                    />
+                    <Label className="text-sm">Contact Page</Label>
+                  </div>
                 </div>
               </div>
             </CardContent>
