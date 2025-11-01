@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -44,13 +46,22 @@ export default function Pricing({ content }: PricingProps) {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-5xl mx-auto">
           {section.plans.map((plan: any, index: number) => (
             <Card 
               key={index} 
-              className={`relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                plan.popular ? 'ring-2 ring-primary scale-105' : ''
+              className={`relative shadow-lg transition-all duration-300 hover:-translate-y-2 h-full flex flex-col ${
+                plan.popular ? 'border-2 border-primary' : 'border-0'
               }`}
+              style={{
+                boxShadow: `0 10px 25px rgba(0, 0, 0, 0.1)`,
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 50px hsl(var(--primary) / 0.4)`;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = `0 10px 25px rgba(0, 0, 0, 0.1)`;
+              }}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -61,21 +72,21 @@ export default function Pricing({ content }: PricingProps) {
                 </div>
               )}
               
-              <CardHeader className="text-center pb-4">
+              <CardHeader className="text-center pb-8">
                 <CardTitle className="text-xl font-bold text-gray-900">
                   {plan.name}
                 </CardTitle>
-                <div className="mt-4">
+                <div className="mt-8">
                   <span className="text-4xl font-bold text-primary">{plan.price}</span>
                   <span className="text-gray-600 ml-2">{plan.period}</span>
                 </div>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-6">
                   {plan.description}
                 </p>
               </CardHeader>
               
-              <CardContent className="pt-0">
-                <div className="space-y-3 mb-8">
+              <CardContent className="pt-2 pb-8 flex-1 flex flex-col">
+                <div className="space-y-4 mb-8 flex-1">
                   {/* Features */}
                   {(() => {
                     const features = Array.isArray(plan.features)
