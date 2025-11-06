@@ -67,9 +67,9 @@
   "footerTextColor": "white",
   "fontFamily": "poppins",
   "heroBackgrounds": {
-    "service-window-cleaning": "/uploads/hero-background-1758833060814.jpg",
-    "home": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/herovideo.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvaGVyb3ZpZGVvLm1wNCIsImlhdCI6MTc2MTUxNzI0MSwiZXhwIjoxNzkzMDUzMjQxfQ.wV05qya9jNGWhtZl-qS5A93uh-aB46n1RI0GZhAwc6I",
-    "service-painting": "/uploads/hero-background-1761518540845.png"
+    "service-window-cleaning": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/herovideo.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvaGVyb3ZpZGVvLm1wNCIsImlhdCI6MTc2MTUxNzI0MSwiZXhwIjoxNzkzMDUzMjQxfQ.wV05qya9jNGWhtZl-qS5A93uh-aB46n1RI0GZhAwc6I",
+    "service-painting": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/painting.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvcGFpbnRpbmcubXA0IiwiaWF0IjoxNzYyNDQ1Nzk0LCJleHAiOjE3OTM5ODE3OTR9.fQxLYmikYr32KpzbdFi_3m_TlDPf2mHFNtHHXTl2yDY",
+    "home": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/HERO.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvSEVSTy5tcDQiLCJpYXQiOjE3NjI0NDYwNTMsImV4cCI6MTc5Mzk4MjA1M30.hmWBGtWeGEkX8UY9HwZWQmR9vrjGS1Ob9wS8GFD-eEk"
   },
   "heroStyling": {
     "backgroundType": "accent",
@@ -202,6 +202,24 @@
       "overlayOpacity": 50,
       "overlayColor": "#000000",
       "videoPosition": 50
+    },
+    "image-video-1762442571160": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    },
+    "image-video-1762445800655": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    },
+    "image-video-1762446064070": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
     }
   },
   "headerCtaTextColor": "white",
@@ -218,7 +236,13 @@
       "overlayColor": "#000000",
       "videoPosition": 36
     },
-    "/uploads/hero-background-1761518540845.png": {
+    "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/painting.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvcGFpbnRpbmcubXA0IiwiaWF0IjoxNzYyNDQ1Nzk0LCJleHAiOjE3OTM5ODE3OTR9.fQxLYmikYr32KpzbdFi_3m_TlDPf2mHFNtHHXTl2yDY": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    },
+    "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/HERO.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvSEVSTy5tcDQiLCJpYXQiOjE3NjI0NDYwNTMsImV4cCI6MTc5Mzk4MjA1M30.hmWBGtWeGEkX8UY9HwZWQmR9vrjGS1Ob9wS8GFD-eEk": {
       "overlayType": "dark",
       "overlayOpacity": 50,
       "overlayColor": "#000000",
@@ -226,6 +250,8 @@
     }
   },
   "heroVideos": {
-    "video-1761517273780": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/herovideo.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvaGVyb3ZpZGVvLm1wNCIsImlhdCI6MTc2MTUxNzI0MSwiZXhwIjoxNzkzMDUzMjQxfQ.wV05qya9jNGWhtZl-qS5A93uh-aB46n1RI0GZhAwc6I"
+    "video-1761517273780": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/herovideo.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvaGVyb3ZpZGVvLm1wNCIsImlhdCI6MTc2MTUxNzI0MSwiZXhwIjoxNzkzMDUzMjQxfQ.wV05qya9jNGWhtZl-qS5A93uh-aB46n1RI0GZhAwc6I",
+    "video-1762445800655": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/painting.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvcGFpbnRpbmcubXA0IiwiaWF0IjoxNzYyNDQ1Nzk0LCJleHAiOjE3OTM5ODE3OTR9.fQxLYmikYr32KpzbdFi_3m_TlDPf2mHFNtHHXTl2yDY",
+    "video-1762446064070": "https://vvcjevhuydxbcwwibkra.supabase.co/storage/v1/object/sign/website-assets-clients/PureVue/HERO.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8xOTUxN2U0YS02N2JlLTQyYTItYjJhZi0xYjI3ZGRlM2NhYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWJzaXRlLWFzc2V0cy1jbGllbnRzL1B1cmVWdWUvSEVSTy5tcDQiLCJpYXQiOjE3NjI0NDYwNTMsImV4cCI6MTc5Mzk4MjA1M30.hmWBGtWeGEkX8UY9HwZWQmR9vrjGS1Ob9wS8GFD-eEk"
   }
 }

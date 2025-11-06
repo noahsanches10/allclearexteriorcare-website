@@ -112,31 +112,55 @@
       "items": [
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1762021279578.png",
+          "beforeImage": "/uploads/gallery-1762444826177.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1762021328067.png",
+          "beforeImage": "/uploads/gallery-1762444836162.png",
+          "afterImage": "",
+          "description": ""
+        },
+        {
+          "title": "BEFORE",
+          "beforeImage": "/uploads/gallery-1762444863733.jpg",
+          "afterImage": "",
+          "description": ""
+        },
+        {
+          "title": "AFTER",
+          "beforeImage": "/uploads/gallery-1762444880862.jpg",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1762021381925.png",
+          "beforeImage": "/uploads/gallery-1762444898177.png",
           "afterImage": "",
           "description": ""
         },
         {
           "title": "",
-          "beforeImage": "/uploads/gallery-1762021419630.png",
+          "beforeImage": "/uploads/gallery-1762444913589.png",
+          "afterImage": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "beforeImage": "/uploads/gallery-1762444972693.jpg",
+          "afterImage": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "beforeImage": "/uploads/gallery-1762444983188.jpg",
           "afterImage": "",
           "description": ""
         }
       ],
-      "displayStyle": "grid",
-      "autoRotateInterval": "5"
+      "displayStyle": "carousel",
+      "autoRotateInterval": "4"
     },
     "faq": {
       "enabled": true,
