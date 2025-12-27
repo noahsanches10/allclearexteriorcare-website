@@ -1,16 +1,16 @@
 {
   "hero": {
-    "title": "Wallops Cleaning Services",
-    "subtitle": "The best premium cleaning service in East Tennessee",
+    "title": "All Clear Exterior Care",
+    "subtitle": "Professional exterior care serving Middle Tennessee",
     "image": "",
     "ctaText": "Get Free Estimate",
     "ctaLink": "/contact",
     "cta": {
       "primary": {
         "text": "Call Now",
-        "link": "tel:(865) 336-0700",
+        "link": "tel:(615) 398-0145",
         "enabled": true,
-        "color": "primary",
+        "color": "secondary",
         "textColor": "white"
       },
       "secondary": {
@@ -53,17 +53,17 @@
       "enabled": true,
       "title": "Why Choose Us",
       "subtitle": "",
-      "background": "secondary-light",
+      "background": "gray",
       "items": [
         {
           "icon": "award",
           "title": "Locally Owned, Community Trusted",
-          "description": "Wallops Cleaning Services has been serving East Tennessee with dedication and pride, building trust with neighbors through reliable and friendly service."
+          "description": "All Clear Exterior Care has been serving Middle Tennessee with dedication and pride, building trust with neighbors through reliable and friendly service."
         },
         {
           "icon": "droplets",
           "title": "Professional Results, Every Time",
-          "description": "Our skilled team delivers premium cleaning services for windows, pressure washing, gutters, and holiday lighting with precision and care."
+          "description": "Our skilled team delivers professional exterior care services including window cleaning, gutter cleaning, pressure washing, and driveway sealing with precision and care."
         },
         {
           "icon": "users",
@@ -80,21 +80,21 @@
       "items": [
         {
           "name": "Jennifer Walsh",
-          "location": "Logan",
+          "location": "Mt. Juliet",
           "rating": 5,
           "text": "Amazing window cleaning service! My windows have never been cleaner. The team was professional and efficient.",
           "avatar": ""
         },
         {
           "name": "Robert Chen",
-          "location": "Hyrum",
+          "location": "Hermitage",
           "rating": 5,
-          "text": "The house washing service transformed our home's exterior. It looks like new construction again!",
+          "text": "The pressure washing service transformed our home's exterior. It looks like new construction again!",
           "avatar": ""
         },
         {
           "name": "Maria Rodriguez",
-          "location": "Smithfield",
+          "location": "Old Hickory",
           "rating": 5,
           "text": "Professional solar panel cleaning service. They were thorough and our panels are producing more energy than ever. Highly recommend!",
           "avatar": ""
@@ -102,7 +102,7 @@
       ],
       "useEmbed": true,
       "embedCode": "<script src=\"https://elfsightcdn.com/platform.js\" async></script>\n<div class=\"elfsight-app-893eac12-ce22-4682-9d4b-759a3336e8d5\" data-elfsight-app-lazy></div>",
-      "iframeUrl": "https://15bccb0d3f3b499e93f42f32658d79a2.elf.site",
+      "iframeUrl": "https://317902ba14af4a37906f5cfbe54022ec.elf.site",
       "iframeHeight": "275px"
     },
     "gallery": {
@@ -179,11 +179,11 @@
       "enabled": true,
       "title": "Frequently Asked Questions",
       "subtitle": "",
-      "background": "secondary-light",
+      "background": "gray",
       "items": [
         {
           "question": "How often should I have my windows professionally cleaned?",
-          "answer": "For East Tennessee homes, we recommend professional window cleaning every 3-6 months. This ensures your windows stay clean and protected year-round!"
+          "answer": "For Middle Tennessee homes, we recommend professional window cleaning every 3-6 months. This ensures your windows stay clean and protected year-round!"
         },
         {
           "question": "What surfaces can pressure washing clean?",
@@ -194,8 +194,8 @@
           "answer": "Yes! Gutter cleaning is one of our core services. We safely remove debris and ensure proper water flow to protect your home's foundation."
         },
         {
-          "question": "Do you install holiday lighting?",
-          "answer": "Absolutely! We offer professional holiday lighting installation to make your home festive and beautiful. We handle design, installation, and takedown."
+          "question": "Do you offer driveway sealing?",
+          "answer": "Absolutely! We offer professional driveway sealing to protect and enhance your driveway's appearance and longevity."
         },
         {
           "question": "Do you have a satisfaction guarantee?",
@@ -247,7 +247,7 @@
           ]
         }
       ],
-      "background": "secondary-light",
+      "background": "gray",
       "title": "Save With Service Plans",
       "subtitle": ""
     }

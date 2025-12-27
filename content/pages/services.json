@@ -99,33 +99,33 @@
       ]
     },
     {
-      "title": "Holiday Lighting",
-      "description": "Professional holiday lighting design and installation for a festive home",
-      "icon": "award",
-      "image": "https://www.outdoorlights.com/sub/45921/images/Fishers-Indiana-Christmas-Lighting-Service.jpeg",
-      "slug": "holiday-lighting",
+      "title": "Driveway Sealing",
+      "description": "Professional driveway sealing to protect and enhance your driveway",
+      "icon": "shield",
+      "image": "/uploads/service-1766871964839.jpg",
+      "slug": "driveway-sealing",
       "enabled": true,
       "showOtherServices": true,
       "showThumbnailInHero": false,
       "showContentInHero": false,
       "contentImage": "",
-      "longDescription": "Make your home the highlight of the neighborhood with professional holiday lighting. Our team designs custom lighting displays tailored to your home's architecture and style. We handle all installation, and provide convenient removal when the season ends.",
+      "longDescription": "Protect your investment with professional driveway sealing. Our expert team applies high-quality sealant to preserve your driveway's appearance and extend its lifespan. Sealing protects against weather damage, oil stains, and everyday wear and tear while enhancing your home's curb appeal.",
       "benefits": [
         {
-          "title": "Custom Design",
-          "description": "We work with you to create a beautiful holiday light display that matches your style and preferences."
+          "title": "Protection from Elements",
+          "description": "Sealing protects your driveway from water damage, UV rays, and harsh weather conditions that cause cracking and deterioration."
         },
         {
-          "title": "Professional Installation",
-          "description": "Expert installation with high-quality LED lights and commercial-grade wiring for safety and durability."
+          "title": "Enhanced Appearance",
+          "description": "Fresh sealant restores your driveway's rich, dark color and gives it a like-new appearance that boosts curb appeal."
         },
         {
-          "title": "Hassle-Free Service",
-          "description": "We handle design, installation, and removal - you just enjoy the beautiful results and compliments from neighbors."
+          "title": "Extended Lifespan",
+          "description": "Regular sealing can double the life of your driveway by preventing damage and reducing the need for costly repairs."
         },
         {
-          "title": "Energy Efficient",
-          "description": "We use LED lights that are energy-efficient and long-lasting, reducing your electricity costs."
+          "title": "Cost-Effective Maintenance",
+          "description": "Driveway sealing is an affordable way to maintain your property and prevent expensive resurfacing or replacement down the road."
         }
       ]
     }
@@ -140,7 +140,7 @@
     },
     "secondary": {
       "text": "Call Now",
-      "link": "tel:(865) 336-0700",
+      "link": "tel:(615) 398-0145",
       "enabled": true,
       "color": "white"
     }

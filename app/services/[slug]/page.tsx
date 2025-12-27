@@ -68,9 +68,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   try {
+    const resolvedParams = await params;
     const servicesConfig = getPageContent('services');
     const siteConfig = getSiteConfig();
-    const service: Service | undefined = servicesConfig.services?.find((s: any) => s.slug === params.slug);
+    const service: Service | undefined = servicesConfig.services?.find((s: any) => s.slug === resolvedParams.slug);
 
     if (!service) {
       return { title: 'Service Not Found' };
@@ -93,6 +94,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
+  const resolvedParams = await params;
   const siteConfig = getSiteConfig();
   const navigation = getNavigation();
   const servicesConfig: ServicesPageData & { services: Service[] } = getPageContent('services');
@@ -101,14 +103,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const enabledServices = servicesConfig.services?.filter((service) => service.enabled !== false) || [];
 
   // Find the specific service
-  const service = servicesConfig.services?.find((s) => s.slug === params.slug) as Service | undefined;
+  const service = servicesConfig.services?.find((s) => s.slug === resolvedParams.slug) as Service | undefined;
 
   if (!service || service.enabled === false) {
     notFound();
   }
 
   // Get other services for "Other Services" section
-  const otherServices = enabledServices.filter((s) => s.slug !== params.slug);
+  const otherServices = enabledServices.filter((s) => s.slug !== resolvedParams.slug);
 
   // Construct hero content structure that Hero component expects
   const heroContent = {
@@ -137,7 +139,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       />
       <main>
         {/* Hero Section */}
-        <Hero content={heroContent} siteConfig={siteConfig} pageType={`service-${params.slug}`} />
+        <Hero content={heroContent} siteConfig={siteConfig} pageType={`service-${resolvedParams.slug}`} />
         <div className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{/* Content moved to Hero component */}</div>
         </div>

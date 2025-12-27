@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   try {
-    const post = getBlogPost(params.slug);
+    const resolvedParams = await params;
+    const post = getBlogPost(resolvedParams.slug);
     const siteConfig = getSiteConfig();
     
     return {
@@ -52,6 +53,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const resolvedParams = await params;
   const siteConfig = getSiteConfig();
   const navigation = getNavigation();
   const servicesConfig = getPageContent('services');
@@ -61,7 +63,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   
   let post;
   try {
-    post = getBlogPost(params.slug);
+    post = getBlogPost(resolvedParams.slug);
   } catch {
     notFound();
   }

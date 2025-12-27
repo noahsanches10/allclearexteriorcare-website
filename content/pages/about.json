@@ -23,14 +23,14 @@
   "story": {
     "title": "Our Story",
     "content": [
-      "Wallops Cleaning Services was founded with a simple mission: to provide East Tennessee with professional, reliable cleaning solutions that homeowners can trust. We understand that your home is your investment, and keeping it clean and well-maintained is a priority.",
-      "What started as a commitment to exceptional service has grown into a trusted name throughout Vonore, Maryville, Knoxville, Loudon, Madisonville, and Tellico Village. We've built our reputation on hard work, attention to detail, and genuine care for our customers' properties.",
-      "Every member of our team is trained to deliver professional results while treating your home with respect. Whether it's crystal-clear windows, pressure-washed driveways, clean gutters, or festive holiday lighting, we bring the same dedication to every job. Wallops Cleaning Services isn't just about cleaning—it's about building lasting relationships with our neighbors and customers throughout East Tennessee."
+      "All Clear Exterior Care was founded with a simple mission: to provide Middle Tennessee with professional, reliable exterior care solutions that homeowners can trust. We understand that your home is your investment, and keeping it clean and well-maintained is a priority.",
+      "What started as a commitment to exceptional service has grown into a trusted name throughout Mt. Juliet, Hermitage, Old Hickory, and surrounding areas. We've built our reputation on hard work, attention to detail, and genuine care for our customers' properties.",
+      "Every member of our team is trained to deliver professional results while treating your home with respect. Whether it's crystal-clear windows, pressure-washed surfaces, clean gutters, or sealed driveways, we bring the same dedication to every job. All Clear Exterior Care isn't just about cleaning—it's about building lasting relationships with our neighbors and customers throughout Middle Tennessee."
     ],
     "stats": [
       {
         "number": "500+",
-        "label": "East Tennessee Properties Served"
+        "label": "Middle Tennessee Properties Served"
       },
       {
         "number": "5+",
@@ -45,7 +45,7 @@
   },
   "values": {
     "title": "Our Core Values",
-    "subtitle": "We're committed to excellence in every aspect of our professional cleaning and maintenance services",
+    "subtitle": "We're committed to excellence in every aspect of our professional exterior care services",
     "items": [
       {
         "icon": "shield",
@@ -65,13 +65,13 @@
       {
         "icon": "users",
         "title": "Community Focused",
-        "description": "Locally owned and deeply rooted in the East Tennessee community. We're invested in your satisfaction and in serving our neighbors with excellence."
+        "description": "Locally owned and deeply rooted in the Middle Tennessee community. We're invested in your satisfaction and in serving our neighbors with excellence."
       }
     ]
   },
   "team": {
     "title": "Meet Our Team",
-    "subtitle": "Professional cleaning service specialists dedicated to serving the East Tennessee community",
+    "subtitle": "Professional exterior care specialists dedicated to serving the Middle Tennessee community",
     "members": []
   }
 }

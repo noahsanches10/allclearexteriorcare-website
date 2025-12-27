@@ -1,30 +1,31 @@
 {
-  "siteName": "Wallops Cleaning Services",
-  "tagline": "Professional Cleaning in Tennessee",
-  "logo": "/uploads/1765334379422.png",
+  "siteName": "All Clear Exterior Care",
+  "tagline": "Professional Exterior Care in Middle Tennessee",
+  "logo": "/uploads/1766871385928.png",
   "brandColors": {
-    "primary": "#3A0CA3",
-    "secondary": "#00000",
-    "accent": "#737C7E"
+    "primary": "#1C459B",
+    "secondary": "#18ACd4",
+    "accent": "#00000"
   },
-  "headerStyle": "default",
-  "footerStyle": "secondary",
+  "headerStyle": "transparent",
+  "footerStyle": "default",
   "contact": {
-    "phone": "(865) 336-0700",
-    "email": "",
+    "phone": "(615) 398-0145",
+    "email": "allclearexteriorcare@gmail.com",
     "address": ""
   },
   "serviceAreas": [
-    "Vonore",
-    "Maryville",
-    "Knoxville",
-    "Loudon",
-    "Madisonville",
-    "Tellico Village"
+    "Mt. Juliet",
+    "Hermitage",
+    "Old Hickory",
+    "Lebanon",
+    "Hendersonville",
+    "Gallatin",
+    "Antioch"
   ],
   "socialMedia": {
-    "facebook": "https://www.facebook.com/WallopsServices",
-    "instagram": "",
+    "facebook": "https://www.facebook.com/profile.php?id=61580944224144",
+    "instagram": "https://www.instagram.com/allclearexteriorcarellc/",
     "nextdoor": "",
     "google": ""
   },
@@ -33,17 +34,17 @@
   "bannerLayout": "contained",
   "bannerStyle": "secondary",
   "ctaBanner": {
-    "title": "Ready for Professional Cleaning?",
-    "subtitle": "Contact Wallops Cleaning Services today for a free estimate and see the difference professional cleaning makes.",
+    "title": "Ready for Professional Exterior Care?",
+    "subtitle": "Contact All Clear Exterior Care today for a free estimate and see the difference professional service makes.",
     "primaryText": "Get Free Estimate",
     "secondaryText": "Call Now",
     "primaryLink": "/contact",
-    "secondaryLink": "tel:(865)336-0700",
+    "secondaryLink": "tel:(615)398-0145",
     "primaryEnabled": true,
-    "primaryButtonColor": "white",
+    "primaryButtonColor": "secondary",
     "style": "primary",
     "layout": "contained",
-    "secondaryButtonColor": "secondary",
+    "secondaryButtonColor": "outline",
     "showOnPages": {
       "home": true,
       "services": true,
@@ -54,20 +55,21 @@
       "reviews": true,
       "plan": true
     },
-    "primaryButtonTextColor": "primary",
-    "secondaryButtonTextColor": "white"
+    "primaryButtonTextColor": "white",
+    "secondaryButtonTextColor": "white",
+    "secondaryEnabled": false
   },
   "showLogoInFooter": false,
   "logoSize": 60,
-  "favicon": "/uploads/1765334387253.png",
+  "favicon": "/uploads/1766871398109.png",
   "footerTextColor": "white",
   "fontFamily": "poppins",
   "heroBackgrounds": {
-    "service-holiday-lighting": "/uploads/hero-background-1766557344124.jpeg",
     "service-gutter-cleaning": "/uploads/hero-background-1766557298849.jpg",
     "service-pressure-washing": "/uploads/hero-background-1766557317981.png",
     "service-window-cleaning": "/uploads/hero-background-1766557258847.webp",
-    "home": "/uploads/hero-background-1766557248607.png"
+    "service-driveway-sealing": "/uploads/hero-background-1766871473578.jpg",
+    "home": "/uploads/hero-background-1766873358982.png"
   },
   "heroStyling": {
     "backgroundType": "secondary",
@@ -254,17 +256,23 @@
       "overlayOpacity": 50,
       "overlayColor": "#000000",
       "videoPosition": 50
-    }
-  },
-  "headerCtaTextColor": "white",
-  "heroOverlayByPath": {
-    "/uploads/hero-background-1758833060814.jpg": {
+    },
+    "image-hero-background-1766871473578.jpg": {
       "overlayType": "dark",
       "overlayOpacity": 50,
       "overlayColor": "#000000",
       "videoPosition": 50
     },
-    "/uploads/hero-background-1766557344124.jpeg": {
+    "image-hero-background-1766873358982.png": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    }
+  },
+  "headerCtaTextColor": "white",
+  "heroOverlayByPath": {
+    "/uploads/hero-background-1758833060814.jpg": {
       "overlayType": "dark",
       "overlayOpacity": 50,
       "overlayColor": "#000000",
@@ -288,7 +296,13 @@
       "overlayColor": "#000000",
       "videoPosition": 50
     },
-    "/uploads/hero-background-1766557248607.png": {
+    "/uploads/hero-background-1766871473578.jpg": {
+      "overlayType": "dark",
+      "overlayOpacity": 50,
+      "overlayColor": "#000000",
+      "videoPosition": 50
+    },
+    "/uploads/hero-background-1766873358982.png": {
       "overlayType": "dark",
       "overlayOpacity": 50,
       "overlayColor": "#000000",
